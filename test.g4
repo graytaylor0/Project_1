@@ -1,11 +1,6 @@
 grammar test;
-/*plus : NUMBER '+' NUMBER;
-sub : NUMBER '-' NUMBER;
-mult : NUMBER '*' NUMBER;
-div : NUMBER '/' NUMBER;
-exp : NUMBER '**' NUMBER;
-paren : NUMBER '(' NUMBER ')' ;
-heavyparen : '(' NUMBER ')' '(' NUMBER ')';*/
+
+//BATCH 1
 literal: STRINGLITERAL | INTEGER;
 relation_name: IDENTIFIER;
 attribute_name: IDENTIFIER;
@@ -17,6 +12,24 @@ open_cmd: 'OPEN' relation_name;
 close_cmd: 'CLOSE' relation_name;
 write_cmd: 'WRITE' relation_name;
 exit_cmd: 'EXIT';
+
+//BATCH 2
+condition: conjunction ('||' conjunction)*;
+conjunction: comparison ('&&' comparison)*;
+comparison: operand OP operand | '(' condition ')';
+
+//BATCH 3
+expr: atomic_expr | selection | projection | renaming | union | difference | product | natural_join;
+atomic_expr: relation_name | '(' expr ')';
+selection: 'select' '(' condition ')' atomic_expr;
+projection: 'project' '(' attribute_list ')' atomic_expr;
+renaming: 'rename' '(' attribute_list ')' atomic_expr;
+union: atomic_expr '+' atomic_expr;
+difference: atomic_expr '-' atomic_expr;
+product: atomic_expr '*' atomic_expr;
+natural_join: atomic_expr '&' atomic_expr;
+
+//BATCH 0
 OP: '==' | '!=' | '<' | '>' | '<=' | '>=';
 INTEGER: (DIGIT)+;
 DIGIT: [0-9];
