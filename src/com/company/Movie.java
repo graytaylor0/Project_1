@@ -1,5 +1,6 @@
 package com.company;
 import java.util.ArrayList;
+
 public class Movie {
     private int id;
     private String name;
@@ -25,6 +26,14 @@ public class Movie {
 
     public int getId() {
         return id;
+    }
+
+    public String getGenre(){
+        return this.genre;
+    }
+
+    public void setGenre(String genre){
+        this.genre = genre;
     }
 
     public void setId(int id) {
