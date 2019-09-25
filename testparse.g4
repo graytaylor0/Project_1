@@ -39,7 +39,7 @@ delete_cmd: 'DELETE FROM' relation_name 'WHERE' condition;
 //BATCH 5
 command: (show_cmd | create_cmd | update_cmd | insert_cmd | delete_cmd | open_cmd | close_cmd | write_cmd | exit_cmd);
 query: relation_name '<-' expr;
-program: (query | command)
+program: (query | command);
 
 
 
