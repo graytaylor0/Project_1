@@ -5,9 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import project1.antlr4.MyRulesBaseListener;
-import project1.antlr4.rulesLexer;
-import project1.antlr4.rulesParser;
+import project1.Dbms;
+import com.company.antlr4.MyRulesBaseListener;
+import com.company.antlr4.rulesLexer;
+import com.company.antlr4.rulesParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -34,5 +35,6 @@ public class Main {
             MyRulesBaseListener listener = new MyRulesBaseListener();
             walker.walk(listener, programContext);
         }
+        System.out.println(Dbms.terminalNodes.size());
     }
 }
