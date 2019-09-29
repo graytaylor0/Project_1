@@ -3,8 +3,26 @@ package com.company;
 import java.util.ArrayList;
 
 public class DBMS {
-    public ArrayList<Movie> movies = new ArrayList<Movie>();
-    public ArrayList<Person> people = new ArrayList<Person>();
+    public static ArrayList<Movie> movies = new ArrayList<Movie>();
+    public static ArrayList<Person> people = new ArrayList<Person>();
+    public static ArrayList<String> token = new ArrayList<String>();
+
+    public boolean compareTo(String operator, int num1, int num2){
+        if (operator.equals("==")){
+            return num1 == num2;
+        }else if (operator.equals("!=")) {
+            return num1 != num2;
+        }else if (operator.equals("<")) {
+            return num1 < num2;
+        }else if (operator.equals(">")) {
+            return num1 > num2;
+        }else if (operator.equals(">=")) {
+            return num1 >= num2;
+        }else if (operator.equals("<=")) {
+            return num1 <= num2;
+        }
+        return false;
+    }
 
     public static ArrayList<String> terminalNodes = new ArrayList<String>(); // Added list of terminal nodes from old Dbms
 
@@ -35,10 +53,10 @@ public class DBMS {
         return filtered_movies;
     }
 
-    public ArrayList<Movie> getMoviesByName(int year){
+    public ArrayList<Movie> getMoviesByYear(String operator, int year){
         ArrayList<Movie> filtered_movies = new ArrayList<Movie>();
         for (int i = 0; i < movies.size(); i++) {
-            if (movies.get(i).getYear() == year) {
+            if (compareTo(operator, movies.get(i).getYear(), year)) {
                 filtered_movies.add(movies.get(i));
             }
         }
