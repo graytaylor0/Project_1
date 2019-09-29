@@ -1,5 +1,5 @@
 // Generated from C:/Users/monke/OneDrive - Texas A&M University/Fall 2019/CSCE 315 - 909/Project 1/src/project1\rules.g4 by ANTLR 4.7.2
-package project1;
+package com.company.antlr4;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

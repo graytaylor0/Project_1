@@ -6,6 +6,8 @@ public class DBMS {
     public ArrayList<Movie> movies = new ArrayList<Movie>();
     public ArrayList<Person> people = new ArrayList<Person>();
 
+    public static ArrayList<String> terminalNodes = new ArrayList<String>(); // Added list of terminal nodes from old Dbms
+
     public void addMovie(Movie movie){
         movies.add(movie);
     }

@@ -1,5 +1,5 @@
 // Generated from C:/Users/monke/OneDrive - Texas A&M University/Fall 2019/CSCE 315 - 909/Project 1/src/project1\rules.g4 by ANTLR 4.7.2
-package project1.antlr4;
+package com.company.antlr4;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -52,7 +52,7 @@ public class rulesBaseListener implements rulesListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperand(rulesParser.OperandContext ctx) { }
+	@Override public void enterOperand(rulesParser.OperandContext ctx) {}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -401,7 +401,7 @@ public class rulesBaseListener implements rulesListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitTerminal(TerminalNode node) {System.out.println(node.}
+	@Override public void visitTerminal(TerminalNode node) { }
 	/**
 	 * {@inheritDoc}
 	 *
